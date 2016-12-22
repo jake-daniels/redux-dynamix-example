@@ -28,7 +28,7 @@ class Page extends PureComponent {
 			<div className="page">
 
 				<div className="panel top-left">
-					<ModuleA number={12}/>
+					<ModuleA/>
 				</div>
 
 				<div className="panel top-right">
@@ -40,7 +40,7 @@ class Page extends PureComponent {
 				</div>
 
 				<div className="panel bottom-right">
-					<EmptyModule/>
+					<ModuleD text='AHOJ'/>
 				</div>
 
 			</div>

@@ -13,6 +13,7 @@ const Reducer = handleActions({
 	[Types.LOAD_DATA_REQUEST]: (state, action) => {
 		return state.merge({
 			isLoading: true,
+			data: null,
 		})
 	},
 

@@ -1,21 +1,36 @@
 
 import React, {PureComponent, PropTypes} from 'react'
+import {connect} from 'react-redux'
+import {Actions} from './Actions'
 
-export default class View extends PureComponent{
+const stateMap = (state) => {
+	return {
+		text: state.c.get('text'),
+	}
+}
+const actionMap = {
+	changeText: Actions.changeText,
+}
+class View extends PureComponent{
 
 	static propTypes = {
-		text: PropTypes.string.isRequired,
+		text: PropTypes.string,
+		changeText: PropTypes.func.isRequired,
+	}
+
+	inputChanged = (e) => {
+		this.props.changeText(e.target.value)
 	}
 
 	render () {
 		return (
 			<div className="module module-c">
 
-				<h1 className="title">MODULE C</h1>
+				<h1 className="title">Module C</h1>
 
 				<div className="content">
 					<div className="block">
-						<input />
+						<input placeholder="Type here..." onInput={this.inputChanged}/>
 						<label className="text">{this.props.text}</label>
 					</div>
 				</div>
@@ -25,3 +40,5 @@ export default class View extends PureComponent{
 	}
 
 }
+
+export default connect(stateMap, actionMap)(View)

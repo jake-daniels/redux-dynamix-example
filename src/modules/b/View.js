@@ -1,7 +1,20 @@
 
 import React, {PureComponent, PropTypes} from 'react'
+import {connect} from 'react-redux'
+import {Actions} from './Actions'
 
-export default class View extends PureComponent{
+const stateMap = (state) => {
+	return {
+
+	}
+}
+const actionMap = {
+	showModuleC: Actions.showModuleC,
+	hideModuleC: Actions.hideModuleC,
+	showModuleD: Actions.showModuleD,
+	hideModuleD: Actions.hideModuleD,
+}
+class View extends PureComponent{
 
 	static propTypes = {
 		showModuleC: PropTypes.func.isRequired,
@@ -14,7 +27,7 @@ export default class View extends PureComponent{
 		return (
 			<div className="module module-b">
 
-				<h1 className="title">MODULE B</h1>
+				<h1 className="title">Module B</h1>
 
 				<div className="content">
 
@@ -41,3 +54,5 @@ export default class View extends PureComponent{
 	}
 
 }
+
+export default connect(stateMap, actionMap)(View)
