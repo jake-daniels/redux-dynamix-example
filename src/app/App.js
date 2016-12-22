@@ -10,6 +10,8 @@ import {createDynamix} from 'redux-dynamix/index'
 import RootReducer from 'app/RootReducer'
 import Page from 'app/Page'
 
+import './Styles.less'
+
 class App extends Component {
 
 	store = null
