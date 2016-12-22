@@ -23,6 +23,46 @@ body {
 	color: whitesmoke;
 	font-family: Lato;
 
+	.state-view {
+
+		width: 360px;
+		height: 360px;
+		z-index: 2;
+		position: fixed;
+		top: ~'calc(50% - 180px)';
+		left: ~'calc(50% - 180px)';
+		background: rgba(255,255,255,0.2);
+		border-radius: 50%;
+
+		.content{
+			background: whitesmoke;
+			color: #333333;
+			width: 300px;
+			height: 300px;
+			z-index: 3;
+			position: fixed;
+			top: ~'calc(50% - 150px)';
+			left: ~'calc(50% - 150px)';
+			border-radius: 50%;
+			text-align: center;
+
+			h2 {
+				margin-top: 60px;
+				margin-bottom: 20px;
+			}
+			.list {
+				display: block;
+				margin: 0;
+				padding: 0;
+				.item {
+					font-size: 24px;
+					font-weight: 500;
+					list-style: none;
+				}
+			}
+		}
+	}
+
 	.panel {
 		position: fixed;
 		width: 50%;

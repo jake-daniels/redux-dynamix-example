@@ -9,5 +9,5 @@ export const Actions = {
 			type: Types.CHANGE_TEXT,
 			payload: {value: text},
 		}
-	}
+	},
 }

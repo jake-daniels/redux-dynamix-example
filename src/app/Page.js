@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import {Actions} from './Actions'
 
+import StateView from './StateView'
 import EmptyModule from './EmptyModule'
 import BlueModule from 'modules/blue/View'
 import GreenModule from 'modules/green/View'
@@ -12,6 +13,7 @@ import PurpleModule from 'modules/purple/View'
 
 const stateMap = (state) => {
 	return {
+		stateKeys: Object.keys(state),
 		isRedModuleActive: state.app.get('isRedModuleActive'),
 		isPurpleModuleActive: state.app.get('isPurpleModuleActive'),
 	}
@@ -25,6 +27,7 @@ const actionMap = {
 class Page extends PureComponent {
 
 	static propTypes = {
+		stateKeys: PropTypes.array.isRequired,
 		isRedModuleActive: PropTypes.bool.isRequired,
 		isPurpleModuleActive: PropTypes.bool.isRequired,
 
@@ -42,6 +45,8 @@ class Page extends PureComponent {
 
 		return (
 			<div className="page">
+
+				<StateView keys={this.props.stateKeys}/>
 
 				<div className="panel top-left">
 					<BlueModule/>

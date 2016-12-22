@@ -13,7 +13,7 @@ export const Actions = {
 			dispatch({
 				type: Types.LOAD_DATA_SUCCESS,
 				payload: {
-					data: {foo: 12, bar: 'baz'}
+					data: {foo: 12, bar: 'baz'},
 				},
 			})
 		}, 3000)
