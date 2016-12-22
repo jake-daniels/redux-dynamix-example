@@ -7,7 +7,7 @@ export default class EmptyModule extends PureComponent {
 
 		return (
 			<div className="module empty-module">
-				<h1 className="info">{'{empty module}'}</h1>
+				<h1 className="info">{'{no module here}'}</h1>
 			</div>
 		)
 	}

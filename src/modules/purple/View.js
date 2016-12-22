@@ -5,8 +5,8 @@ import {Actions} from './Actions'
 
 const stateMap = (state) => {
 	return {
-		isLoading: state.d.get('isLoading'),
-		data: state.d.get('data') && state.d.get('data').toJS(),
+		isLoading: state.purple.get('isLoading'),
+		data: state.purple.get('data') && state.purple.get('data').toJS(),
 	}
 }
 const actionMap = {
@@ -22,7 +22,7 @@ class View extends PureComponent{
 
 	render () {
 
-		let status = null;
+		let status = null
 		if (this.props.isLoading) {
 			status = 'Loading...'
 		} else if (this.props.data !== null) {
@@ -30,9 +30,9 @@ class View extends PureComponent{
 		}
 
 		return (
-			<div className="module module-d">
+			<div className="module purple">
 
-				<h1 className="title">Module D</h1>
+				<h1 className="title">Purple Module</h1>
 
 				<div className="content">
 					<div className="block">

@@ -5,7 +5,7 @@ import {Actions} from './Actions'
 
 const stateMap = (state) => {
 	return {
-		number: state.a.get('number'),
+		number: state.blue.get('number'),
 	}
 }
 const actionMap = {
@@ -22,9 +22,9 @@ class View extends PureComponent{
 
 	render () {
 		return (
-			<div className="module module-a">
+			<div className="module blue">
 
-				<h1 className="title">Module A</h1>
+				<h1 className="title">Blue Module</h1>
 
 				<div className="content">
 					<div className="block">

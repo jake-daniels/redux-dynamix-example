@@ -1,14 +1,14 @@
 
 import { combineReducers } from 'redux'
 
-import ReducerModuleA from 'modules/a/Reducer'
-import ReducerModuleB from 'modules/b/Reducer'
-import ReducerModuleC from 'modules/c/Reducer'
-import ReducerModuleD from 'modules/d/Reducer'
+import AppReducer from 'app/Reducer'
+import BlueReducer from 'modules/blue/Reducer'
+import RedReducer from 'modules/red/Reducer'
+import PurpleReducer from 'modules/purple/Reducer'
 
 export default combineReducers({
-	a: ReducerModuleA,
-	b: ReducerModuleB,
-	c: ReducerModuleC,
-	d: ReducerModuleD,
+	app: AppReducer,
+	blue: BlueReducer,
+	red: RedReducer,
+	purple: PurpleReducer,
 })

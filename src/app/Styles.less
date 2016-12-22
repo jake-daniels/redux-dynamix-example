@@ -67,9 +67,19 @@ body {
 			font-weight: 500;
 		}
 
+		h2 {
+			margin-bottom: 20px;
+			font-weight: 500;
+		}
+
+		.block {
+			text-align: center;
+			margin: 30px 0;
+		}
+
 		button {
 			margin-right: 20px;
-			width: 150px;
+			width: 180px;
 			height: 40px;
 			line-height: 35px;
 			border: solid 2px whitesmoke;
@@ -91,14 +101,24 @@ body {
 			}
 		}
 
-		&.module-a {
+		input {
+			height: 50px;
+			width: 400px;
+			border: none;
+			outline: none;
+			color: #333333;
+			font-size: 18px;
+			padding: 0 15px;
+			display: block;
+			margin: 0 auto;
+		}
+
+		&.blue {
 			@color: #5899c7;
 
 			background: @color;
-
-			.block {
-				text-align: center;
-    			margin: 30px 0;
+			button:hover {
+				color: @color;
 			}
 
 			.number {
@@ -107,58 +127,25 @@ body {
 				font-size: 70px;
 				font-weight: 300;
 			}
-
-			button:hover {
-				color: @color;
-			}
 		}
 
-		&.module-b {
+		&.green {
 			@color: #2c9652;
 
 			background: @color;
-
-			h2 {
-				margin-bottom: 20px;
-    			font-weight: 500;
-			}
-
-			.block {
-				text-align: center;
-    			margin: 30px 0;
-			}
-
 			button:hover {
 				color: @color;
 			}
 		}
 
-		&.module-c {
+		&.red {
 			@color: #c14848;
 
 			background: @color;
-
-			h2 {
-				margin-bottom: 20px;
-    			font-weight: 500;
+			button:hover {
+				color: @color;
 			}
 
-			.block {
-				text-align: center;
-    			margin: 30px 0;
-			}
-
-			input {
-				height: 50px;
-				width: 400px;
-				border: none;
-				outline: none;
-				color: #333333;
-				font-size: 18px;
-				padding: 0 15px;
-				display: block;
-				margin: 0 auto;
-			}
 			.text {
 				display: block;
 				font-size: 18px;
@@ -166,35 +153,18 @@ body {
 				width: 400px;
 				margin: 30px auto;
 			}
-
-
-			button:hover {
-				color: @color;
-			}
 		}
 
-		&.module-d {
+		&.purple {
 			@color: #7e69a9;
 
 			background: @color;
-
-			h2 {
-				margin-bottom: 20px;
-    			font-weight: 500;
-			}
-
-			.block {
-				text-align: center;
-    			margin: 30px 0;
+			button:hover {
+				color: @color;
 			}
 
 			.status, .data {
 				font-size: 20px;
-			}
-
-
-			button:hover {
-				color: @color;
 			}
 		}
 
