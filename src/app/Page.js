@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 import {Actions} from './Actions'
 
-import StateView from './StateView'
 import EmptyModule from './EmptyModule'
 import BlueModule from 'modules/blue/View'
 import GreenModule from 'modules/green/View'
@@ -45,8 +44,6 @@ class Page extends PureComponent {
 
 		return (
 			<div className="page">
-
-				<StateView keys={this.props.stateKeys}/>
 
 				<div className="panel top-left">
 					<BlueModule/>

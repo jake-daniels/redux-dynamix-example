@@ -57,7 +57,7 @@ export const injectReducer = (key, reducer) => {
 	const isInjected = dynamicKeys.includes(key)
 
 	if (isInjected) {
-		console.error(`Reducer with key [${key}] is already injected. Use function reinjectReducer(key, reducer) instead. Injection was ignored.`)
+		console.warn(`Reducer with key [${key}] is already injected. Use function reinjectReducer(key, reducer) instead. Injection was ignored.`)
 		return
 	}
 
