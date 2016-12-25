@@ -16,7 +16,7 @@ export const Actions = {
 					data: {foo: 12, bar: 'baz'},
 				},
 			})
-		}, 3000)
+		}, 2000)
 
 	},
 }

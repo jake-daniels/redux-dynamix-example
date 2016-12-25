@@ -2,45 +2,55 @@
 import React, { PureComponent, PropTypes } from 'react'
 import { connect } from 'react-redux'
 
-import {Actions} from './Actions'
-
 import EmptyModule from './EmptyModule'
 import BlueModule from 'modules/blue/View'
 import GreenModule from 'modules/green/View'
 import RedModule from 'modules/red/View'
 import PurpleModule from 'modules/purple/View'
 
+import {injectReducer, ejectReducer} from 'redux-dynamix/index'
+import RedReducer from 'modules/red/Reducer'
+import PurpleReducer from 'modules/purple/Reducer'
+const RED_MODULE_KEY = 'red'
+const PURPLE_MODULE_KEY = 'purple'
+
 const stateMap = (state) => {
 	return {
-		stateKeys: Object.keys(state),
-		isRedModuleActive: state.app.get('isRedModuleActive'),
-		isPurpleModuleActive: state.app.get('isPurpleModuleActive'),
+		isRedModuleActive: (state[RED_MODULE_KEY] !== undefined),
+		isPurpleModuleActive: (state[PURPLE_MODULE_KEY] !== undefined),
 	}
 }
-const actionMap = {
-	injectRedModule: Actions.injectRedModule,
-	ejectRedModule: Actions.ejectRedModule,
-	injectPurpleModule: Actions.injectPurpleModule,
-	ejectPurpleModule: Actions.ejectPurpleModule,
-}
+const actionMap = {}
 class Page extends PureComponent {
 
 	static propTypes = {
-		stateKeys: PropTypes.array.isRequired,
 		isRedModuleActive: PropTypes.bool.isRequired,
 		isPurpleModuleActive: PropTypes.bool.isRequired,
-
-		injectRedModule: PropTypes.func.isRequired,
-		ejectRedModule: PropTypes.func.isRequired,
-		injectPurpleModule: PropTypes.func.isRequired,
-		ejectPurpleModule: PropTypes.func.isRequired,
 	}
+
+
+	injectRedModule = () => {
+		injectReducer(RED_MODULE_KEY, RedReducer)
+	}
+
+	ejectRedModule = () => {
+		ejectReducer(RED_MODULE_KEY)
+	}
+
+	injectPurpleModule = () => {
+		injectReducer(PURPLE_MODULE_KEY, PurpleReducer)
+	}
+
+	ejectPurpleModule = () => {
+		ejectReducer(PURPLE_MODULE_KEY)
+	}
+
 
 	render() {
 
-		const RED_MODULE = (this.props.isRedModuleActive) ? <RedModule/> : <EmptyModule/>
+		const RED_MODULE_COMPONENT = (this.props.isRedModuleActive) ? <RedModule/> : <EmptyModule/>
 
-		const PURPLE_MODULE = (this.props.isPurpleModuleActive) ? <PurpleModule/> : <EmptyModule/>
+		const PURPLE_MODULE_COMPONENT = (this.props.isPurpleModuleActive) ? <PurpleModule/> : <EmptyModule/>
 
 		return (
 			<div className="page">
@@ -51,19 +61,19 @@ class Page extends PureComponent {
 
 				<div className="panel top-right">
 					<GreenModule
-						injectRedModule={this.props.injectRedModule}
-						ejectRedModule={this.props.ejectRedModule}
-						injectPurpleModule={this.props.injectPurpleModule}
-						ejectPurpleModule={this.props.ejectPurpleModule}
+						injectRedModule={this.injectRedModule}
+						ejectRedModule={this.ejectRedModule}
+						injectPurpleModule={this.injectPurpleModule}
+						ejectPurpleModule={this.ejectPurpleModule}
 					/>
 				</div>
 
 				<div className="panel bottom-left">
-					{RED_MODULE}
+					{RED_MODULE_COMPONENT}
 				</div>
 
 				<div className="panel bottom-right">
-					{PURPLE_MODULE}
+					{PURPLE_MODULE_COMPONENT}
 				</div>
 
 			</div>

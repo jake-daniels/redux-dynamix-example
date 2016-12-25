@@ -1,7 +1,3 @@
-/**
- * Project:     redux-dynamix
- * Author:      jake-daniels @ https://github.com/jake-daniels
- */
 
 import React from 'react'
 import ReactDOM from 'react-dom'
