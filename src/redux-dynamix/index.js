@@ -59,7 +59,7 @@ export const ActionTypes = {
  * @returns {object} A Redux store.
  *
  * @example
- * Use 'compose' function that ships with Redux to combine Dynamix enhancer with middleware.
+ * You can use 'compose' function that ships with Redux to combine Dynamix enhancer with middleware.
  * Because middleware is potentially asynchronous,
  * place the Dynamix enhancer after middleware in the composition chain (from right to left)
  *
