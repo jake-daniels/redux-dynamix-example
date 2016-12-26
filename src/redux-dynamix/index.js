@@ -91,7 +91,7 @@ export const createDynamix = () => (createStore) => (reducer, preloadedState, en
 /**
  * Adds new reducer to dynamic reducers pool.
  * @param {string} key - A key, referencing the slice of the state computed by the reducer.
- * @param {function} reducer - A reducer fuction.
+ * @param {function} reducer - A reducer function.
  * @event Dispatches an action where 'type' is set to ActionTypes.REDUCER_INJECTED and 'payload' is the key provided.
  */
 export const injectReducer = (key, reducer) => {
