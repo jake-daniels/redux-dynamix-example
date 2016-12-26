@@ -61,7 +61,7 @@ content of form input fields and so on. However, when user sends data to server 
 you suddenly don't need that data anymore. It remains in your state tree even if no piece of code uses it.
 <br/>
 
-This is the moment, when _redux-dynamix_ comes to help.
+This is the moment, when **Redux Dynamix** comes to help.
 
 
 ## Installation
@@ -73,7 +73,7 @@ npm install --save redux-dynamix
 
 ## Usage
 
-To enable Redux Dynamix, create store enhancer and use it in `createStore` function.
+To enable Dynamix, create store enhancer and use it in `createStore` function.
 
 ```js
 import rootReducer from './reducers'
@@ -163,32 +163,34 @@ dynamic slices of state using dynamic reducers that have been injected.
 Then merges the static slice of the state tree with all dynamic slices resulting in final state tree.
 
 #### Returns
-Enhanced Redux store.
+Enhanced redux store.
 
 ### `injectReducer(key, reducer)`
 Adds new reducer to dynamic reducers pool.
 Application state will contain new dynamic slice, specified by `key` and `reducer` initial state.
 Dispatches `ActionTypes.REDUCER_INJECTED` event, which can be listened to in one of your reducers.
-> Don't inject reducer with the same key twice. It will produce a warning and injection will be ignored.
 
 #### Arguments
 * `key` (string): A key, referencing the slice of state handled by injected reducer.
-* ˙reducer˙ (function): A reducer function.
+* `reducer` (function): A reducer function.
+
+> Don't inject reducer with the same key twice. It will produce a warning and injection will be ignored.
 
 ### `ejectReducer(key)`
 Removes reducer associated with given key from dynamic reducers pool.
 Application state will no longer contain dynamic slice.
 Dispatches `ActionTypes.REDUCER_EJECTED` event, which can be listened to in one of your reducers.
-> Don't eject reducer that hasn't been injected. It will produce a warning and ejection will be ignored.
 
 #### Arguments
 * `key` (string): The key used in injection.
+
+> Don't eject reducer that hasn't been injected. It will produce a warning and ejection will be ignored.
 
 ### `ActionTypes`
 Action types dispatched by Dynamix, prefixed by Dynamix namespace.
 They are fired after injection or ejection and you can listen to them in your reducers to be notified of changes.
 
 #### Properties
-`REDUCER_INJECTED` (string): An action type dispatched when new dynamic reducer function has been injected. Payload contains the key of injected reducer.
+* `REDUCER_INJECTED` (string): An action type dispatched when new dynamic reducer function has been injected. Payload contains the key of injected reducer.
 <br/>
-`REDUCER_EJECTED` (string): An action type dispatched when dynamic reducer function has been ejected. Payload contains the key of ejected reducer.
+* `REDUCER_EJECTED` (string): An action type dispatched when dynamic reducer function has been ejected. Payload contains the key of ejected reducer.
