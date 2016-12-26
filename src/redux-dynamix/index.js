@@ -140,3 +140,10 @@ export const ejectReducer = (key) => {
 		payload: key,
 	})
 }
+
+export default {
+	createDynamix,
+	injectReducer,
+	ejectReducer,
+	ActionTypes,
+}

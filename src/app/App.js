@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 
-import {createDynamix} from 'redux-dynamix/index'
+import {createDynamix} from 'redux-dynamix'
 
 import RootReducer from 'app/RootReducer'
 import Page from 'app/Page'

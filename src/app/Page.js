@@ -8,7 +8,7 @@ import GreenModule from 'modules/green/View'
 import RedModule from 'modules/red/View'
 import PurpleModule from 'modules/purple/View'
 
-import {injectReducer, ejectReducer} from 'redux-dynamix/index'
+import {injectReducer, ejectReducer} from 'redux-dynamix'
 import RedReducer from 'modules/red/Reducer'
 import PurpleReducer from 'modules/purple/Reducer'
 const RED_MODULE_KEY = 'red'
